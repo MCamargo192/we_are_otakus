@@ -1,4 +1,3 @@
-/** Add any JavaScript you need to this file. */
 const figures = window.products;
 var attributes = ['one', 'two', 'three'];
 
