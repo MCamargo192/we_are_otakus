@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="otaku, action figure, animes, games, movies" />
+    <meta
+      name="description"
+      content="A store made for all lovers of the world of anime, cartoons, games and movies. Here you will find an action figure of your favorite character."
+    />
+    <meta name="author" content="Marcelo Camargo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/favicon.ico" sizes="16x16"/>
+    <title>We're Otakus | Action Figures | Home</title>
+
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
+    <script src="js/products.js"></script>
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+      <div class="multi-photos">
+        <span class="close-photos cursor" href="#" onclick="closePhotosPopUp()">&times</span>
+        <div class="photos-content">
+        <div class="photos">
+              <a class="zoom-photos" id="zoomOne" href="#" onmousemove="zoomIn(this.id)">
+                <img id="photoOne" src="" />
+              </a>
+              <a class="zoom-photos" id="zoomTwo" href="#" onmousemove="zoomIn(this.id)">
+                <img id="photoTwo" src="" />
+              </a>
+ 
+              <a class="zoom-photos" id="zoomThree" href="#" onmousemove="zoomIn(this.id)">
+                <img id="photoThree" src="" />
+              </a>
+        </div>    
+        <div class="large-photo">
+          <img id="mainPhoto" src="" />
+        </div>
+      </div>
+    </div>
+    <div id="checkoutpopup" class="popups">
+      <div id="checkPopUp">
+        <span class="close-cart cursor" href="#" onclick="closeCart()">&times</span>
+        <div id="checkout">
+          <p>Your Cart</p>
+          <div id="checkoutprod">
+          <div class="prod">
+            <img src="images/SF1.jpg" />
+            <div class="prodInfo">
+              <p class="prodName">Ryu</p>
+              <p class="prodPrice">$60.90</p>
+              <p class="prodPrice">Quantity: 1</p>
+            </div>
+          </div>
+          <div class="prod">
+            <img src="images/BK1.jpg" />
+            <div class="prodInfo">
+              <p class="prodName">Obi-Wan Kenobi</p>
+              <p class="prodPrice">$48.40</p>
+              <p class="prodPrice">Quantity: 1</p>
+            </div>
+          </div>
+          <div class="prod">
+            <img src="images/ZR1.jpg" />
+            <div class="prodInfo">
+              <p class="prodName">Roronoa Zoro</p>
+              <p class="prodPrice">$37.80</p>
+              <p class="prodPrice">Quantity: 1</p>
+            </div>
+          </div>
+          </div>
+          <div class="total">
+            <p class="prodName">Total</p>
+            <p id="totalProd">$147.10</p>
+          </div>
+          <input type="submit" id="finishCheckout" value="Checkout" onclick="showMsg();" />
+        </div>
+        <span id="orderSubmit">Sorry! Checkout is still under development.</span>
+      </div>
+    </div>
+    <div id="infoPopUp" class="popups">
+      <span class="close-info cursor" href="#" onclick="closeInfo()">&times</span>
+      <div id="infoText">
+        <p>We're Otakus</p>
+        <div id="infoContent">
+          <p>A store made for all lovers of the world of anime, cartoons, games and movies.</p>
+          <p>If you are one of those ... You're an <span>OTAKU</span> too!!!</p>
+          <p>We are sure that you will find an action figure of your favorite character here.</p>
+          <p>So go ahead and pick up how many you want!</p>
+          <p>And don't forget to join your team, subscribing to our group!</p>
+        </div>
+      </div>
+    </div>
+    <header>
+      <div id="banner">
+        <a href="index.html"><img src="images/logo.png" alt="" id="logo"/></a>
+      </div>
+      <div id="user-options">
+        <p id="cartCount"><strong>0</strong></p>
+        <a href="#" id="shop" onclick="openCart();"
+          ><i class="material-icons md-48">shopping_cart</i>
+          <p>Your cart</p>
+        </a>
+        <a href="#" id="who" onclick="openInfo();"
+          ><i class="material-icons md-48">contact_support</i>
+          <p>Who we are</p>
+        </a>
+        <a href="contact.html" id="contact"
+          ><i class="material-icons md-48">contact_mail</i>
+          <p>Contact Us</p>
+        </a>
+      </div>
+    </header>
+    <main>
+      <nav class="sidebar">
+        <div id="sidebar">
+          <p id="filter"><i class="material-icons">tune</i>FILTERS</p>
+        </div>
+        <div class="categories">
+          <p>Category</p>
+          <div class="checkboxes">
+            <label class="container"
+              ><input
+                type="checkbox"
+                id="catAll"
+                checked="checked"
+                value="All"
+                onchange="getCards();"
+              />
+              All
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
+              ><input type="checkbox" id="catAnimes" value="Animes" onchange="getCards();" /> Animes
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
+              ><input type="checkbox" id="catGames" value="Games" onchange="getCards();" /> Games
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
+              ><input type="checkbox" id="catMovies" value="Movies" onchange="getCards();" /> Movies
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <p>Price</p>
+          <div class="checkboxes">
+            <label class="container"
+              ><input
+                type="checkbox"
+                id="priceAll"
+                checked="checked"
+                value="All"
+                onchange="getCards();"
+              />
+              All <span class="checkmark"></span> </label
+            ><label class="container"
+              ><input type="checkbox" id="minusfifty" value="50" onchange="getCards();" /> Up to $50
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
+              ><input type="checkbox" id="plusfifty" value="1000000" onchange="getCards();" /> $50+
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
+      </nav>
+      <section id="indexSec">
+        <div class="content">
+          <div class="card-wrapper">
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div id="store">
+        <p>We're Otakus<span id="copyrighted">&copy;</span></p>
+      </div>
+      <div id="socialmedia">
+        <a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook"></a>
+        <a href="https://twitter.com/" target="_blank" class="fa fa-twitter"></a>
+        <a href="https://www.instagram.com/" target="_blank" class="fa fa-instagram"></a>
+        <a href="https://www.pinterest.ca/" target="_blank" class="fa fa-pinterest"></a>
+      </div>
+      <div class="subscribe">
+        <p>
+          To receive newsletter about our products, subscribe here:
+          <br />
+          Unsubscribe anytime.
+        </p>
+        <form class="subscription" action="https://formspree.io/xnqgwyvd" method="POST">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            autofocus
+            autocomplete="email"
+            placeholder="Email"
+          /><br />
+          <input
+            type="text"
+            name="firstname"
+            id="name"
+            placeholder="First Name"
+            minlength="2"
+            maxlength="60"
+          /><br />
+          <input type="submit" id="subscribe" value="Subscribe" />
+        </form>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<!--
+      Part 1: Main Store Page
+
+      Requirements:
+
+      1. Header across the top must include your store's name, a logo,
+      and use a different background colour, web font, etc.  You must also include
+      a link to your contact.html page.  Your header should include info about
+      what the store is, what it sells, etc.  Use some images to try and draw
+      the user in.  NOTE: place all your site's images in the `src/images/` directory.
+
+      2. Below the header, a multi-column layout of items you can purchase in the
+      store.  You must have at least 10 items in your store, and at least 2
+      categories of items. For example, if you are selling clothing, you might
+      have categories for Men, Women, and Children, and each category would have
+      its own set of items.  Each item should include:
+      
+        - a picture
+        - the item's name/title
+        - a more complete description of the item
+        - a category (i.e., each item must belong to a category)
+        - a price.
+      
+      Each item should be its own "card" (i.e., some kind of box around each item
+      separating one from the next, with suitable whitespace between).
+
+      3. A sidebar (left or right, depending on your design) of the item layout
+      section, showing the different categories of items in your store.  If a
+      user clicks on one of the categories, use CSS and JavaScript to hide all
+      other items in the store (i.e., only show items for the chosen category).
+      Make sure you include a way to return to seeing all categories, and make it
+      obvious to the user that they are only seeing a partial list of items when
+      you filter by category (i.e., use CSS and HTML to change things somehow).
+
+      4. Below the items, a footer with the name of the store, any relevant links you
+      need to give users, as well as a small HTML form for entering an Email
+      address and clicking a "Subscribe" button to subscribe to the store's
+      newsletter. Use https://formspree.io/ to automatically submit the form to
+      your email address (i.e., when a user fills out their email address and
+      clicks submit, *you* should get that information sent to your email
+      address via formspree.io).  Make sure you setup your account on
+      https://formspree.io/.
+
+      5. Use two different Web Fonts for your store.  The titles should be different
+      from any regular text.  Use a free font service like https://fonts.google.com/
+      or any other that you choose.  You can also experiment with different font
+      sizes and colours to draw attention toward or away from various parts of
+      your design.
+
+      6. Pick a colour theme using a tool like https://colorhunt.co/ with at least
+      3 colours (primary, secondary, accent), and use them throughout your site
+      for backgrounds, borders, fonts. Your store page needs to look attractive
+      and marks will be given for good a good looking site.  No one will buy from
+      a store that looks like its owners aren't professional or don't care about
+      details.  Also make sure that the colour contrast in your site is suitable
+      for everyone to read.
+
+      7. Use modern CSS to help you achieve your layout.  For example, Flexbox
+      and CSS Grid can help you create professional looking layouts.  Here
+      are some guides to get you started:
+
+       - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
+       - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout
+       
+      You are also welcome to use existing CSS libraries to help you with your layout,
+      but you must also include your own styles (i.e., you can't use a library
+      for everything in your design).
+
+      8. Make sure you don't use copyrighted materials from other sites.  If you use
+      icons, fonts, images, etc., make sure you are legally permitted to reuse them,
+      and include references to indicate where you got them. Some resources to consider:
+
+        - https://unsplash.com/ for images
+        - https://fontawesome.com/ for icons
+        - https://gallery.manypixels.co/ or https://undraw.co/illustrations for illustrations (SVG)
+
+      9. Make sure you reduce the download size of images you include in your
+      store.  Users don't want to download 10s or 100s of megabytes of data, especially
+      on mobile.  You can use an online tool like https://squoosh.app/ to help you
+      reduce images.  You will lose marks if your images aren't optimized for the web.
+       
+
+      10. Make sure you have no JavaScript or other errors in your Dev Tools Console.
+      Run your site, and test all aspects of it with the Console open, and fix
+      any issues you encounter.
+
+      11. Make sure your forms all work as they should, testing them yourself,
+      and also have someone else test it for you.  The easiest way to find bugs
+      in software is to let someone who didn't build it try to use it!
+      
+    -->
